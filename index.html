@@ -57,7 +57,7 @@
     header {
       background: var(--bg-dark);
       color: #ffffff;
-      padding: 1rem 0;
+      padding: 0.9rem 0;
       position: sticky;
       top: 0;
       z-index: 100;
@@ -66,25 +66,54 @@
 
     .nav {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
+      gap: 0.75rem;
     }
 
     .brand {
       font-weight: 900;
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       letter-spacing: -0.02em;
+      cursor: pointer;
     }
 
     .brand span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .nav-link {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.15);
+      color: #e2e8f0;
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 0.38rem 0.75rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: 0.15s ease;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #ffffff;
+    }
 
     .nav-btn {
       background: var(--whatsapp);
       color: #ffffff;
       text-decoration: none;
-      padding: 0.55rem 1.15rem;
+      padding: 0.48rem 1rem;
       border-radius: 9999px;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 700;
     }
 
@@ -409,7 +438,14 @@
 
   <header>
     <div class="container nav">
-      <div class="brand">KINSPIN <span>COLLECTIONS</span></div>
+      <div class="brand" onclick="jumpToCategory('all')">KINSPIN <span>COLLECTIONS</span></div>
+      <nav class="nav-links" aria-label="Department Navigation">
+        <button type="button" class="nav-link active" data-nav="all" onclick="jumpToCategory('all')">All (37)</button>
+        <button type="button" class="nav-link" data-nav="men" onclick="jumpToCategory('men')">Men's (14)</button>
+        <button type="button" class="nav-link" data-nav="slides" onclick="jumpToCategory('slides')">Slides (8)</button>
+        <button type="button" class="nav-link" data-nav="ladies" onclick="jumpToCategory('ladies')">Ladies' (9)</button>
+        <button type="button" class="nav-link" data-nav="kids" onclick="jumpToCategory('kids')">Kids' (6)</button>
+      </nav>
       <a href="https://wa.me/254795003674?text=Hello%20Kinspin%20Collections,%20I'd%20like%20to%20claim%20the%2010%25%20Nov-Dec%20Festive%20Offer!" target="_blank" class="nav-btn">Claim 10% Offer</a>
     </div>
   </header>
@@ -417,7 +453,7 @@
   <section class="hero">
     <div class="container">
       <span class="pill">November &amp; December Festive Offer • 10% OFF Storewide</span>
-      <h1>Step Into the Holidays — 10% OFF Loafers, Sneakers, Boots &amp; Designer Slides</h1>
+      <h1>Step Into the Holidays — 10% OFF Men's, Ladies' &amp; Kids' Footwear</h1>
       <p>Pick your exact EU size below and lock in your 10% November–December festive discount directly on WhatsApp before stock runs out.</p>
 
       <div>
@@ -436,19 +472,19 @@
   <div class="dept-strip">
     <div class="container dept-grid">
       <div class="dept-box" onclick="jumpToCategory('men')">
-        <strong>Men's Shoes</strong>
-        <span>Adidas, Santoni &amp; Zegna</span>
+        <strong>1. Men's Shoes</strong>
+        <span>Santoni, Zegna &amp; Adidas</span>
       </div>
       <div class="dept-box" onclick="jumpToCategory('slides')">
-        <strong>Designer Slides</strong>
+        <strong>2. Designer Slides</strong>
         <span>Berluti, LV, Gucci &amp; Hermès</span>
       </div>
       <div class="dept-box" onclick="jumpToCategory('ladies')">
-        <strong>Ladies' Shoes</strong>
+        <strong>3. Ladies' Shoes</strong>
         <span>Boots, Heels &amp; Mary Janes</span>
       </div>
       <div class="dept-box" onclick="jumpToCategory('kids')">
-        <strong>Kids' Shoes</strong>
+        <strong>4. Kids' Shoes</strong>
         <span>Kids' Timberlands &amp; Sneakers</span>
       </div>
     </div>
@@ -470,452 +506,8 @@
       </div>
 
       <div class="grid">
-        <!-- KIDS TIMBERLAND 1: Wheat/Orange -->
-        <div class="card" data-dept="kids" data-name="Kids Timberland 6-Inch Boots — Wheat">
-          <div class="img-box">
-            <span class="dept-badge kids">Kids' • Timberland</span>
-            <span class="promo-tag">10% OFF</span>
-            <img src="WhatsApp Image 2026-11-12 at 1.04.24 PM_3.jpg" onerror="this.onerror=null;this.src='WhatsApp Image 2026-11-12 at 1.04.24 PM.jpeg';" alt="Kids Timberland 6-Inch Boots Wheat">
-          </div>
-          <div class="card-body">
-            <h3>Kids' Timberland 6-Inch Boots — Classic Wheat</h3>
-            <p>Iconic wheat nubuck kids' boots with padded dark-brown ankle collar and rugged lugged outsole.</p>
-            <span class="size-label">Select Kids Size:</span>
-            <div class="size-row">
-              <button type="button" class="size-pill" onclick="selectSize(this)">24</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">26</button>
-              <button type="button" class="size-pill selected" onclick="selectSize(this)">28</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">30</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">32</button>
-            </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 28 (10% OFF)</button>
-          </div>
-        </div>
-
-        <!-- KIDS TIMBERLAND 2: Pure White -->
-        <div class="card" data-dept="kids" data-name="Kids Timberland 6-Inch Boots — Pure White">
-          <div class="img-box">
-            <span class="dept-badge kids">Kids' • Timberland</span>
-            <span class="promo-tag">10% OFF</span>
-            <img src="WhatsApp Image 2026-11-12 at 1.04.55 PM.jpeg" alt="Kids Timberland 6-Inch Boots White">
-          </div>
-          <div class="card-body">
-            <h3>Kids' Timberland 6-Inch Boots — Triple White</h3>
-            <p>Clean all-white kids' boots with silver eyelets, padded collar, and non-slip white lug sole.</p>
-            <span class="size-label">Select Kids Size:</span>
-            <div class="size-row">
-              <button type="button" class="size-pill" onclick="selectSize(this)">24</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">26</button>
-              <button type="button" class="size-pill selected" onclick="selectSize(this)">28</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">30</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">32</button>
-            </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 28 (10% OFF)</button>
-          </div>
-        </div>
-
-        <!-- KIDS TIMBERLAND 3: Triple Black -->
-        <div class="card" data-dept="kids" data-name="Kids Timberland 6-Inch Boots — Triple Black">
-          <div class="img-box">
-            <span class="dept-badge kids">Kids' • Timberland</span>
-            <span class="promo-tag">10% OFF</span>
-            <img src="WhatsApp Image 2026-11-12 at 1.05.56 PM.jpeg" alt="Kids Timberland 6-Inch Boots Black">
-          </div>
-          <div class="card-body">
-            <h3>Kids' Timberland 6-Inch Boots — Triple Black</h3>
-            <p>Scuff-resistant matte black kids' boots built for school events, travel, and weekend wear.</p>
-            <span class="size-label">Select Kids Size:</span>
-            <div class="size-row">
-              <button type="button" class="size-pill" onclick="selectSize(this)">24</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">26</button>
-              <button type="button" class="size-pill selected" onclick="selectSize(this)">28</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">30</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">32</button>
-            </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 28 (10% OFF)</button>
-          </div>
-        </div>
-
-        <!-- KIDS TIMBERLAND 4: Crimson Red -->
-        <div class="card" data-dept="kids" data-name="Kids Timberland 6-Inch Boots — Red/White">
-          <div class="img-box">
-            <span class="dept-badge kids">Kids' • Timberland</span>
-            <span class="promo-tag">10% OFF</span>
-            <img src="WhatsApp Image 2026-11-12 at 1.06.02 PM.jpeg" alt="Kids Timberland 6-Inch Boots Red White">
-          </div>
-          <div class="card-body">
-            <h3>Kids' Timberland 6-Inch Boots — Crimson Red</h3>
-            <p>Bold red upper with contrasting white padded collar, white laces, and white rugged outsole.</p>
-            <span class="size-label">Select Kids Size:</span>
-            <div class="size-row">
-              <button type="button" class="size-pill" onclick="selectSize(this)">24</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">26</button>
-              <button type="button" class="size-pill selected" onclick="selectSize(this)">28</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">30</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">32</button>
-            </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 28 (10% OFF)</button>
-          </div>
-        </div>
-
-        <!-- KIDS TIMBERLAND 5: Royal Blue -->
-        <div class="card" data-dept="kids" data-name="Kids Timberland 6-Inch Boots — Royal Blue">
-          <div class="img-box">
-            <span class="dept-badge kids">Kids' • Timberland</span>
-            <span class="promo-tag">10% OFF</span>
-            <img src="WhatsApp Image 2026-11-12 at 1.06.05 PM.jpeg" alt="Kids Timberland 6-Inch Boots Royal Blue">
-          </div>
-          <div class="card-body">
-            <h3>Kids' Timberland 6-Inch Boots — Royal Blue</h3>
-            <p>Vibrant cobalt blue kids' boots with crisp white ankle cuff and durable lugged rubber sole.</p>
-            <span class="size-label">Select Kids Size:</span>
-            <div class="size-row">
-              <button type="button" class="size-pill" onclick="selectSize(this)">24</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">26</button>
-              <button type="button" class="size-pill selected" onclick="selectSize(this)">28</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">30</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">32</button>
-            </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 28 (10% OFF)</button>
-          </div>
-        </div>
-
-        <!-- KIDS SNEAKERS 6 -->
-        <div class="card" data-dept="kids" data-name="Kids Velcro Gum-Sole Active Sneakers (4 Colors)">
-          <div class="img-box">
-            <span class="dept-badge kids">Kids' • 4 Colors</span>
-            <span class="promo-tag">10% OFF</span>
-            <img src="WhatsApp Image 2026-11-14 at 1.27.51 PM.jpeg" alt="Kids Velcro Gum-Sole Active Sneakers">
-          </div>
-          <div class="card-body">
-            <h3>Kids' Easy-Strap Gum-Sole Sneakers</h3>
-            <p>Non-slip textured gum outsole with quick Velcro strap—available in Charcoal, White, Grey &amp; Cream.</p>
-            <span class="size-label">Select Kids Size:</span>
-            <div class="size-row">
-              <button type="button" class="size-pill" onclick="selectSize(this)">21</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">23</button>
-              <button type="button" class="size-pill selected" onclick="selectSize(this)">25</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">27</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">29</button>
-            </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 25 (10% OFF)</button>
-          </div>
-        </div>
-
-        <!-- LADIES MARY JANE 1 -->
-        <div class="card" data-dept="ladies" data-name="Leopard & Black Patent Mary Jane Flats">
-          <div class="img-box">
-            <span class="dept-badge ladies">Ladies' • Flats</span>
-            <span class="promo-tag">10% OFF</span>
-            <img src="WhatsApp Image 2026-11-12 at 12.20.01 PM.jpeg" alt="Leopard and Black Patent Mary Jane Flats">
-          </div>
-          <div class="card-body">
-            <h3>Leopard &amp; Black Patent Mary Jane Flats</h3>
-            <p>Glossy black patent toe paired with leopard-print heel counter and gold-buckle instep strap.</p>
-            <span class="size-label">Select EU Size:</span>
-            <div class="size-row">
-              <button type="button" class="size-pill" onclick="selectSize(this)">37</button>
-              <button type="button" class="size-pill selected" onclick="selectSize(this)">38</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">39</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
-            </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 38 (10% OFF)</button>
-          </div>
-        </div>
-
-        <!-- LADIES MARY JANE 2 -->
-        <div class="card" data-dept="ladies" data-name="Leopard & Cognac Tan Patent Mary Jane Flats">
-          <div class="img-box">
-            <span class="dept-badge ladies">Ladies' • Flats</span>
-            <span class="promo-tag">10% OFF</span>
-            <img src="WhatsApp Image 2026-11-12 at 12.20.01 PM (1).jpeg" alt="Leopard and Cognac Tan Patent Mary Jane Flats">
-          </div>
-          <div class="card-body">
-            <h3>Leopard &amp; Cognac Patent Mary Jane Flats</h3>
-            <p>Warm caramel-brown patent vamp contrasted with animal-print heel and slender buckle strap.</p>
-            <span class="size-label">Select EU Size:</span>
-            <div class="size-row">
-              <button type="button" class="size-pill" onclick="selectSize(this)">37</button>
-              <button type="button" class="size-pill selected" onclick="selectSize(this)">38</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">39</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
-            </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 38 (10% OFF)</button>
-          </div>
-        </div>
-
-        <!-- LADIES MARY JANE 3 -->
-        <div class="card" data-dept="ladies" data-name="Burgundy Patent T-Strap Ballet Flats">
-          <div class="img-box">
-            <span class="dept-badge ladies">Ladies' • Flats</span>
-            <span class="promo-tag">10% OFF</span>
-            <img src="WhatsApp Image 2026-11-12 at 12.20.03 PM.jpeg" alt="Burgundy Patent T-Strap Ballet Flats">
-          </div>
-          <div class="card-body">
-            <h3>Burgundy Wine Patent T-Strap Flats</h3>
-            <p>Deep oxblood glossy patent leather flat with classic T-bar strap and gold buckle for office or church.</p>
-            <span class="size-label">Select EU Size:</span>
-            <div class="size-row">
-              <button type="button" class="size-pill" onclick="selectSize(this)">37</button>
-              <button type="button" class="size-pill selected" onclick="selectSize(this)">38</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">39</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
-            </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 38 (10% OFF)</button>
-          </div>
-        </div>
-
-        <!-- LADIES MARY JANE 4 -->
-        <div class="card" data-dept="ladies" data-name="Nude Blush Patent T-Strap Ballet Flats">
-          <div class="img-box">
-            <span class="dept-badge ladies">Ladies' • Flats</span>
-            <span class="promo-tag">10% OFF</span>
-            <img src="WhatsApp Image 2026-11-12 at 12.20.03 PM (1).jpeg" alt="Nude Blush Patent T-Strap Ballet Flats">
-          </div>
-          <div class="card-body">
-            <h3>Nude Blush Patent T-Strap Flats</h3>
-            <p>Versatile neutral blush-nude glossy finish with delicate T-strap and cushioned insole.</p>
-            <span class="size-label">Select EU Size:</span>
-            <div class="size-row">
-              <button type="button" class="size-pill" onclick="selectSize(this)">37</button>
-              <button type="button" class="size-pill selected" onclick="selectSize(this)">38</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">39</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
-            </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 38 (10% OFF)</button>
-          </div>
-        </div>
-
-        <!-- LADIES MARY JANE 5 -->
-        <div class="card" data-dept="ladies" data-name="Jet-Black Patent T-Strap Ballet Flats">
-          <div class="img-box">
-            <span class="dept-badge ladies">Ladies' • Flats</span>
-            <span class="promo-tag">10% OFF</span>
-            <img src="WhatsApp Image 2026-11-12 at 12.20.04 PM.jpeg" alt="Jet-Black Patent T-Strap Ballet Flats">
-          </div>
-          <div class="card-body">
-            <h3>Jet-Black Patent T-Strap Ballet Flats</h3>
-            <p>Polished all-black patent leather T-strap flats with gold buckle—sleek, lightweight, and comfortable all day.</p>
-            <span class="size-label">Select EU Size:</span>
-            <div class="size-row">
-              <button type="button" class="size-pill" onclick="selectSize(this)">37</button>
-              <button type="button" class="size-pill selected" onclick="selectSize(this)">38</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">39</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
-            </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 38 (10% OFF)</button>
-          </div>
-        </div>
-
-        <!-- LADIES 6 -->
-        <div class="card" data-dept="ladies" data-name="Polka-Dot Gold-Buckle Mary Jane Flats">
-          <div class="img-box">
-            <span class="dept-badge ladies">Ladies' • 3 Colors</span>
-            <span class="promo-tag">10% OFF</span>
-            <img src="WhatsApp Image 2026-11-14 at 9.29.54 AM.jpeg" alt="Polka-Dot Gold-Buckle Mary Jane Flats">
-          </div>
-          <div class="card-body">
-            <h3>Polka-Dot Gold-Buckle Mary Jane Flats</h3>
-            <p>Chic mesh &amp; woven polka-dot ballet flats topped with a statement gold oval buckle. Available in White, Black &amp; Mocha.</p>
-            <span class="size-label">Select EU Size:</span>
-            <div class="size-row">
-              <button type="button" class="size-pill" onclick="selectSize(this)">37</button>
-              <button type="button" class="size-pill selected" onclick="selectSize(this)">38</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">39</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
-            </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 38 (10% OFF)</button>
-          </div>
-        </div>
-
-        <!-- LADIES 7 -->
-        <div class="card" data-dept="ladies" data-name="Knee-High Suede Kitten-Heel Boots">
-          <div class="img-box">
-            <span class="dept-badge ladies">Ladies' • Boots</span>
-            <span class="promo-tag">10% OFF</span>
-            <img src="WhatsApp Image 2026-11-14 at 1.25.32 PM.jpeg" alt="Knee-High Suede Kitten-Heel Boots">
-          </div>
-          <div class="card-body">
-            <h3>Knee-High Pointed Suede Stiletto Boots</h3>
-            <p>Sleek side-zip tall suede boots with comfortable slim heel. Available in Taupe Beige, Chocolate Brown &amp; Classic Black.</p>
-            <span class="size-label">Select EU Size:</span>
-            <div class="size-row">
-              <button type="button" class="size-pill" onclick="selectSize(this)">37</button>
-              <button type="button" class="size-pill selected" onclick="selectSize(this)">38</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">39</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
-            </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 38 (10% OFF)</button>
-          </div>
-        </div>
-
-        <!-- LADIES 8 -->
-        <div class="card" data-dept="ladies" data-name="Zara Floral Lace Gold-Studded Ballet Flats">
-          <div class="img-box">
-            <span class="dept-badge ladies">Ladies' • Zara</span>
-            <span class="promo-tag">10% OFF</span>
-            <img src="WhatsApp Image 2026-11-13 at 12.29.43 PM.jpeg" alt="Zara Floral Lace Gold-Studded Ballet Flats">
-          </div>
-          <div class="card-body">
-            <h3>Zara Floral Lace Gold-Studded Ballet Flats</h3>
-            <p>Embroidered floral mesh flats with metallic gold oval-studded strap. Available in Black, Blush Pink &amp; Tan.</p>
-            <span class="size-label">Select EU Size:</span>
-            <div class="size-row">
-              <button type="button" class="size-pill" onclick="selectSize(this)">37</button>
-              <button type="button" class="size-pill selected" onclick="selectSize(this)">38</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">39</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
-            </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 38 (10% OFF)</button>
-          </div>
-        </div>
-
-        <!-- LADIES 9 -->
-        <div class="card" data-dept="ladies" data-name="Red Polka-Dot Bow Ankle-Strap Heels">
-          <div class="img-box">
-            <span class="dept-badge ladies">Ladies' • Heels</span>
-            <span class="promo-tag">10% OFF</span>
-            <img src="WhatsApp Image 2026-11-13 at 12.29.18 PM.jpeg" alt="Red Polka-Dot Bow Ankle-Strap Heels">
-          </div>
-          <div class="card-body">
-            <h3>Red Polka-Dot Bow Ankle-Strap Stilettos</h3>
-            <p>Statement red-and-white polka-dot pointed heels with oversized satin bow and slim ankle strap for festive events.</p>
-            <span class="size-label">Select EU Size:</span>
-            <div class="size-row">
-              <button type="button" class="size-pill" onclick="selectSize(this)">37</button>
-              <button type="button" class="size-pill selected" onclick="selectSize(this)">38</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">39</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
-            </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 38 (10% OFF)</button>
-          </div>
-        </div>
-
-        <!-- ADIDAS 1 -->
-        <div class="card" data-dept="men" data-name="Adidas Mesh Running Sneakers — Black/White">
-          <div class="img-box">
-            <span class="dept-badge">Men's • Adidas</span>
-            <span class="promo-tag">10% OFF</span>
-            <img src="WhatsApp Image 2026-11-13 at 10.06.52 AM.jpeg" alt="Adidas Mesh Running Sneakers Black White">
-          </div>
-          <div class="card-body">
-            <h3>Adidas Mesh Runners — Black &amp; White</h3>
-            <p>Breathable black athletic mesh upper with signature white 3-Stripes and cushioned white EVA sole.</p>
-            <span class="size-label">Select EU Size:</span>
-            <div class="size-row">
-              <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
-              <button type="button" class="size-pill selected" onclick="selectSize(this)">42</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">43</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">44</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">45</button>
-            </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 (10% OFF)</button>
-          </div>
-        </div>
-
-        <!-- ADIDAS 2 -->
-        <div class="card" data-dept="men" data-name="Adidas Mesh Running Sneakers — Black/Grey">
-          <div class="img-box">
-            <span class="dept-badge">Men's • Adidas</span>
-            <span class="promo-tag">10% OFF</span>
-            <img src="WhatsApp Image 2026-11-13 at 10.06.53 AM.jpeg" alt="Adidas Mesh Running Sneakers Black Grey">
-          </div>
-          <div class="card-body">
-            <h3>Adidas Mesh Runners — Black &amp; Charcoal Grey</h3>
-            <p>Lightweight daily trainer featuring reflective silver stripes and shock-absorbing slate grey midsole.</p>
-            <span class="size-label">Select EU Size:</span>
-            <div class="size-row">
-              <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
-              <button type="button" class="size-pill selected" onclick="selectSize(this)">42</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">43</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">44</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">45</button>
-            </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 (10% OFF)</button>
-          </div>
-        </div>
-
-        <!-- ADIDAS 3 -->
-        <div class="card" data-dept="men" data-name="Adidas Mesh Running Sneakers — Navy/White">
-          <div class="img-box">
-            <span class="dept-badge">Men's • Adidas</span>
-            <span class="promo-tag">10% OFF</span>
-            <img src="WhatsApp Image 2026-11-13 at 10.06.53 AM (1).jpeg" alt="Adidas Mesh Running Sneakers Navy White">
-          </div>
-          <div class="card-body">
-            <h3>Adidas Mesh Runners — Midnight Navy</h3>
-            <p>Deep navy ventilated mesh upper with crisp white stripes and high-traction rubber outsole.</p>
-            <span class="size-label">Select EU Size:</span>
-            <div class="size-row">
-              <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
-              <button type="button" class="size-pill selected" onclick="selectSize(this)">42</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">43</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">44</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">45</button>
-            </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 (10% OFF)</button>
-          </div>
-        </div>
-
-        <!-- ADIDAS 4 -->
-        <div class="card" data-dept="men" data-name="Adidas Mesh Running Sneakers — Wolf Grey">
-          <div class="img-box">
-            <span class="dept-badge">Men's • Adidas</span>
-            <span class="promo-tag">10% OFF</span>
-            <img src="WhatsApp Image 2026-11-13 at 10.06.54 AM.jpeg" alt="Adidas Mesh Running Sneakers Wolf Grey">
-          </div>
-          <div class="card-body">
-            <h3>Adidas Mesh Runners — Wolf Grey &amp; Black</h3>
-            <p>Clean light-grey engineered mesh with bold black 3-Stripes and cushioned white running sole.</p>
-            <span class="size-label">Select EU Size:</span>
-            <div class="size-row">
-              <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
-              <button type="button" class="size-pill selected" onclick="selectSize(this)">42</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">43</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">44</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">45</button>
-            </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 (10% OFF)</button>
-          </div>
-        </div>
-
-        <!-- ADIDAS 5 -->
-        <div class="card" data-dept="men" data-name="Adidas Mesh Running Sneakers — Triple Black">
-          <div class="img-box">
-            <span class="dept-badge">Men's • Triple Black</span>
-            <span class="promo-tag">10% OFF</span>
-            <img src="WhatsApp Image 2026-11-13 at 10.06.54 AM (1).jpeg" alt="Adidas Mesh Running Sneakers Triple Black">
-          </div>
-          <div class="card-body">
-            <h3>Adidas Mesh Runners — Triple Black</h3>
-            <p>Stealth all-black mesh sneaker with tonal black stripes and black sole—built for gym, travel, or casual workdays.</p>
-            <span class="size-label">Select EU Size:</span>
-            <div class="size-row">
-              <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
-              <button type="button" class="size-pill selected" onclick="selectSize(this)">42</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">43</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">44</button>
-              <button type="button" class="size-pill" onclick="selectSize(this)">45</button>
-            </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 (10% OFF)</button>
-          </div>
-        </div>
-
-        <!-- SANTONI 1 -->
+        <!-- ==================== 1. MEN'S SHOES (14) ==================== -->
+        <!-- MEN 1: Santoni Black Suede Bit Loafer -->
         <div class="card" data-dept="men" data-name="Santoni Black Suede Bit Loafers">
           <div class="img-box">
             <span class="dept-badge">Men's • Santoni</span>
@@ -938,7 +530,7 @@
           </div>
         </div>
 
-        <!-- SANTONI 2 -->
+        <!-- MEN 2: Santoni Brown Suede Bit Loafer -->
         <div class="card" data-dept="men" data-name="Santoni Espresso Brown Suede Loafers">
           <div class="img-box">
             <span class="dept-badge">Men's • Santoni</span>
@@ -961,7 +553,7 @@
           </div>
         </div>
 
-        <!-- SANTONI 3 -->
+        <!-- MEN 3: Santoni Brown Boxed -->
         <div class="card" data-dept="men" data-name="Santoni Brown Suede Boxed Edition">
           <div class="img-box">
             <span class="dept-badge">Men's • Boxed</span>
@@ -983,7 +575,7 @@
           </div>
         </div>
 
-        <!-- SANTONI 4 -->
+        <!-- MEN 4: Santoni Black Boxed -->
         <div class="card" data-dept="men" data-name="Santoni Black Suede Boxed Edition">
           <div class="img-box">
             <span class="dept-badge">Men's • Boxed</span>
@@ -1005,7 +597,7 @@
           </div>
         </div>
 
-        <!-- TIMBERLAND MEN -->
+        <!-- MEN 5: Timberland Mid-Tops -->
         <div class="card" data-dept="men" data-name="Timberland Leather Mid-Top Sneakers (5 Colors)">
           <div class="img-box">
             <span class="dept-badge">Men's • 5 Colors</span>
@@ -1028,7 +620,7 @@
           </div>
         </div>
 
-        <!-- ZEGNA 1 -->
+        <!-- MEN 6: Zegna Navy -->
         <div class="card" data-dept="men" data-name="Zegna Navy Suede Slip-On Sneakers">
           <div class="img-box">
             <span class="dept-badge">Men's • Zegna</span>
@@ -1050,7 +642,7 @@
           </div>
         </div>
 
-        <!-- ZEGNA 2 -->
+        <!-- MEN 7: Zegna Black/White -->
         <div class="card" data-dept="men" data-name="Zegna Black Suede Sneakers (White Sole)">
           <div class="img-box">
             <span class="dept-badge">Men's • Zegna</span>
@@ -1072,7 +664,7 @@
           </div>
         </div>
 
-        <!-- ZEGNA 3 -->
+        <!-- MEN 8: Zegna Triple Black -->
         <div class="card" data-dept="men" data-name="Zegna Triple-Black Suede Sneakers">
           <div class="img-box">
             <span class="dept-badge">Men's • All Black</span>
@@ -1094,7 +686,7 @@
           </div>
         </div>
 
-        <!-- ZEGNA 4 -->
+        <!-- MEN 9: Zegna Sand Taupe -->
         <div class="card" data-dept="men" data-name="Zegna Sand Taupe Suede Sneakers">
           <div class="img-box">
             <span class="dept-badge">Men's • Zegna</span>
@@ -1116,7 +708,123 @@
           </div>
         </div>
 
-        <!-- BERLUTI 1 -->
+        <!-- MEN 10: Adidas Black/White -->
+        <div class="card" data-dept="men" data-name="Adidas Mesh Running Sneakers — Black/White">
+          <div class="img-box">
+            <span class="dept-badge">Men's • Adidas</span>
+            <span class="promo-tag">10% OFF</span>
+            <img src="WhatsApp Image 2026-11-13 at 10.06.52 AM.jpeg" alt="Adidas Mesh Running Sneakers Black White">
+          </div>
+          <div class="card-body">
+            <h3>Adidas Mesh Runners — Black &amp; White</h3>
+            <p>Breathable black athletic mesh upper with signature white 3-Stripes and cushioned white EVA sole.</p>
+            <span class="size-label">Select EU Size:</span>
+            <div class="size-row">
+              <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
+              <button type="button" class="size-pill selected" onclick="selectSize(this)">42</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">43</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">44</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">45</button>
+            </div>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 (10% OFF)</button>
+          </div>
+        </div>
+
+        <!-- MEN 11: Adidas Black/Grey -->
+        <div class="card" data-dept="men" data-name="Adidas Mesh Running Sneakers — Black/Grey">
+          <div class="img-box">
+            <span class="dept-badge">Men's • Adidas</span>
+            <span class="promo-tag">10% OFF</span>
+            <img src="WhatsApp Image 2026-11-13 at 10.06.53 AM.jpeg" alt="Adidas Mesh Running Sneakers Black Grey">
+          </div>
+          <div class="card-body">
+            <h3>Adidas Mesh Runners — Black &amp; Charcoal Grey</h3>
+            <p>Lightweight daily trainer featuring reflective silver stripes and shock-absorbing slate grey midsole.</p>
+            <span class="size-label">Select EU Size:</span>
+            <div class="size-row">
+              <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
+              <button type="button" class="size-pill selected" onclick="selectSize(this)">42</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">43</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">44</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">45</button>
+            </div>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 (10% OFF)</button>
+          </div>
+        </div>
+
+        <!-- MEN 12: Adidas Navy/White -->
+        <div class="card" data-dept="men" data-name="Adidas Mesh Running Sneakers — Navy/White">
+          <div class="img-box">
+            <span class="dept-badge">Men's • Adidas</span>
+            <span class="promo-tag">10% OFF</span>
+            <img src="WhatsApp Image 2026-11-13 at 10.06.53 AM (1).jpeg" alt="Adidas Mesh Running Sneakers Navy White">
+          </div>
+          <div class="card-body">
+            <h3>Adidas Mesh Runners — Midnight Navy</h3>
+            <p>Deep navy ventilated mesh upper with crisp white stripes and high-traction rubber outsole.</p>
+            <span class="size-label">Select EU Size:</span>
+            <div class="size-row">
+              <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
+              <button type="button" class="size-pill selected" onclick="selectSize(this)">42</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">43</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">44</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">45</button>
+            </div>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 (10% OFF)</button>
+          </div>
+        </div>
+
+        <!-- MEN 13: Adidas Wolf Grey -->
+        <div class="card" data-dept="men" data-name="Adidas Mesh Running Sneakers — Wolf Grey">
+          <div class="img-box">
+            <span class="dept-badge">Men's • Adidas</span>
+            <span class="promo-tag">10% OFF</span>
+            <img src="WhatsApp Image 2026-11-13 at 10.06.54 AM.jpeg" alt="Adidas Mesh Running Sneakers Wolf Grey">
+          </div>
+          <div class="card-body">
+            <h3>Adidas Mesh Runners — Wolf Grey &amp; Black</h3>
+            <p>Clean light-grey engineered mesh with bold black 3-Stripes and cushioned white running sole.</p>
+            <span class="size-label">Select EU Size:</span>
+            <div class="size-row">
+              <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
+              <button type="button" class="size-pill selected" onclick="selectSize(this)">42</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">43</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">44</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">45</button>
+            </div>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 (10% OFF)</button>
+          </div>
+        </div>
+
+        <!-- MEN 14: Adidas Triple Black -->
+        <div class="card" data-dept="men" data-name="Adidas Mesh Running Sneakers — Triple Black">
+          <div class="img-box">
+            <span class="dept-badge">Men's • Triple Black</span>
+            <span class="promo-tag">10% OFF</span>
+            <img src="WhatsApp Image 2026-11-13 at 10.06.54 AM (1).jpeg" alt="Adidas Mesh Running Sneakers Triple Black">
+          </div>
+          <div class="card-body">
+            <h3>Adidas Mesh Runners — Triple Black</h3>
+            <p>Stealth all-black mesh sneaker with tonal black stripes and black sole—built for gym, travel, or casual workdays.</p>
+            <span class="size-label">Select EU Size:</span>
+            <div class="size-row">
+              <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
+              <button type="button" class="size-pill selected" onclick="selectSize(this)">42</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">43</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">44</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">45</button>
+            </div>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 (10% OFF)</button>
+          </div>
+        </div>
+
+        <!-- ==================== 2. DESIGNER SLIDES (8) ==================== -->
+        <!-- SLIDES 1: Berluti Brown -->
         <div class="card" data-dept="slides" data-name="Berluti Paris Double-Buckle Slides — Mocha Brown">
           <div class="img-box">
             <span class="dept-badge slides">Slides • Berluti</span>
@@ -1138,7 +846,7 @@
           </div>
         </div>
 
-        <!-- BERLUTI 2 -->
+        <!-- SLIDES 2: Berluti White -->
         <div class="card" data-dept="slides" data-name="Berluti Paris Double-Buckle Slides — Pure White">
           <div class="img-box">
             <span class="dept-badge slides">Slides • Berluti</span>
@@ -1160,7 +868,7 @@
           </div>
         </div>
 
-        <!-- BERLUTI 3 -->
+        <!-- SLIDES 3: Berluti Black -->
         <div class="card" data-dept="slides" data-name="Berluti Paris Double-Buckle Slides — Matte Black">
           <div class="img-box">
             <span class="dept-badge slides">Slides • Berluti</span>
@@ -1182,7 +890,7 @@
           </div>
         </div>
 
-        <!-- HERMES -->
+        <!-- SLIDES 4: Hermes -->
         <div class="card" data-dept="slides" data-name="Hermès Black Embossed Criss-Cross Slides">
           <div class="img-box">
             <span class="dept-badge slides">Slides • Hermès</span>
@@ -1204,7 +912,7 @@
           </div>
         </div>
 
-        <!-- BURBERRY -->
+        <!-- SLIDES 5: Burberry -->
         <div class="card" data-dept="slides" data-name="Burberry TB Gold-Emblem Pebbled Leather Slides">
           <div class="img-box">
             <span class="dept-badge slides">Slides • Burberry</span>
@@ -1226,7 +934,7 @@
           </div>
         </div>
 
-        <!-- LV -->
+        <!-- SLIDES 6: LV -->
         <div class="card" data-dept="slides" data-name="Louis Vuitton Damier Gloss Criss-Cross Slides">
           <div class="img-box">
             <span class="dept-badge slides">Slides • LV Paris</span>
@@ -1248,7 +956,7 @@
           </div>
         </div>
 
-        <!-- GUCCI -->
+        <!-- SLIDES 7: Gucci -->
         <div class="card" data-dept="slides" data-name="Gucci GG Gold-Hardware Leather Slides">
           <div class="img-box">
             <span class="dept-badge slides">Slides • Gucci</span>
@@ -1270,7 +978,7 @@
           </div>
         </div>
 
-        <!-- MCQUEEN -->
+        <!-- SLIDES 8: McQueen -->
         <div class="card" data-dept="slides" data-name="Alexander McQueen Silver-Buckle Lug Slides">
           <div class="img-box">
             <span class="dept-badge slides">Slides • McQueen</span>
@@ -1289,6 +997,338 @@
               <button type="button" class="size-pill" onclick="selectSize(this)">44</button>
             </div>
             <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 (10% OFF)</button>
+          </div>
+        </div>
+
+        <!-- ==================== 3. LADIES' SHOES (9) ==================== -->
+        <!-- LADIES 1: Black Patent + Leopard -->
+        <div class="card" data-dept="ladies" data-name="Leopard & Black Patent Mary Jane Flats">
+          <div class="img-box">
+            <span class="dept-badge ladies">Ladies' • Flats</span>
+            <span class="promo-tag">10% OFF</span>
+            <img src="WhatsApp Image 2026-11-12 at 12.20.01 PM.jpeg" alt="Leopard and Black Patent Mary Jane Flats">
+          </div>
+          <div class="card-body">
+            <h3>Leopard &amp; Black Patent Mary Jane Flats</h3>
+            <p>Glossy black patent toe paired with leopard-print heel counter and gold-buckle instep strap.</p>
+            <span class="size-label">Select EU Size:</span>
+            <div class="size-row">
+              <button type="button" class="size-pill" onclick="selectSize(this)">37</button>
+              <button type="button" class="size-pill selected" onclick="selectSize(this)">38</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">39</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
+            </div>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 38 (10% OFF)</button>
+          </div>
+        </div>
+
+        <!-- LADIES 2: Cognac Tan + Leopard -->
+        <div class="card" data-dept="ladies" data-name="Leopard & Cognac Tan Patent Mary Jane Flats">
+          <div class="img-box">
+            <span class="dept-badge ladies">Ladies' • Flats</span>
+            <span class="promo-tag">10% OFF</span>
+            <img src="WhatsApp Image 2026-11-12 at 12.20.01 PM (1).jpeg" alt="Leopard and Cognac Tan Patent Mary Jane Flats">
+          </div>
+          <div class="card-body">
+            <h3>Leopard &amp; Cognac Patent Mary Jane Flats</h3>
+            <p>Warm caramel-brown patent vamp contrasted with animal-print heel and slender buckle strap.</p>
+            <span class="size-label">Select EU Size:</span>
+            <div class="size-row">
+              <button type="button" class="size-pill" onclick="selectSize(this)">37</button>
+              <button type="button" class="size-pill selected" onclick="selectSize(this)">38</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">39</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
+            </div>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 38 (10% OFF)</button>
+          </div>
+        </div>
+
+        <!-- LADIES 3: Burgundy T-Strap -->
+        <div class="card" data-dept="ladies" data-name="Burgundy Patent T-Strap Ballet Flats">
+          <div class="img-box">
+            <span class="dept-badge ladies">Ladies' • Flats</span>
+            <span class="promo-tag">10% OFF</span>
+            <img src="WhatsApp Image 2026-11-12 at 12.20.03 PM.jpeg" alt="Burgundy Patent T-Strap Ballet Flats">
+          </div>
+          <div class="card-body">
+            <h3>Burgundy Wine Patent T-Strap Flats</h3>
+            <p>Deep oxblood glossy patent leather flat with classic T-bar strap and gold buckle for office or church.</p>
+            <span class="size-label">Select EU Size:</span>
+            <div class="size-row">
+              <button type="button" class="size-pill" onclick="selectSize(this)">37</button>
+              <button type="button" class="size-pill selected" onclick="selectSize(this)">38</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">39</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
+            </div>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 38 (10% OFF)</button>
+          </div>
+        </div>
+
+        <!-- LADIES 4: Nude Blush T-Strap -->
+        <div class="card" data-dept="ladies" data-name="Nude Blush Patent T-Strap Ballet Flats">
+          <div class="img-box">
+            <span class="dept-badge ladies">Ladies' • Flats</span>
+            <span class="promo-tag">10% OFF</span>
+            <img src="WhatsApp Image 2026-11-12 at 12.20.03 PM (1).jpeg" alt="Nude Blush Patent T-Strap Ballet Flats">
+          </div>
+          <div class="card-body">
+            <h3>Nude Blush Patent T-Strap Flats</h3>
+            <p>Versatile neutral blush-nude glossy finish with delicate T-strap and cushioned insole.</p>
+            <span class="size-label">Select EU Size:</span>
+            <div class="size-row">
+              <button type="button" class="size-pill" onclick="selectSize(this)">37</button>
+              <button type="button" class="size-pill selected" onclick="selectSize(this)">38</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">39</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
+            </div>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 38 (10% OFF)</button>
+          </div>
+        </div>
+
+        <!-- LADIES 5: Jet Black T-Strap -->
+        <div class="card" data-dept="ladies" data-name="Jet-Black Patent T-Strap Ballet Flats">
+          <div class="img-box">
+            <span class="dept-badge ladies">Ladies' • Flats</span>
+            <span class="promo-tag">10% OFF</span>
+            <img src="WhatsApp Image 2026-11-12 at 12.20.04 PM.jpeg" alt="Jet-Black Patent T-Strap Ballet Flats">
+          </div>
+          <div class="card-body">
+            <h3>Jet-Black Patent T-Strap Ballet Flats</h3>
+            <p>Polished all-black patent leather T-strap flats with gold buckle—sleek, lightweight, and comfortable all day.</p>
+            <span class="size-label">Select EU Size:</span>
+            <div class="size-row">
+              <button type="button" class="size-pill" onclick="selectSize(this)">37</button>
+              <button type="button" class="size-pill selected" onclick="selectSize(this)">38</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">39</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
+            </div>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 38 (10% OFF)</button>
+          </div>
+        </div>
+
+        <!-- LADIES 6: Polka-Dot Mary Janes -->
+        <div class="card" data-dept="ladies" data-name="Polka-Dot Gold-Buckle Mary Jane Flats">
+          <div class="img-box">
+            <span class="dept-badge ladies">Ladies' • 3 Colors</span>
+            <span class="promo-tag">10% OFF</span>
+            <img src="WhatsApp Image 2026-11-14 at 9.29.54 AM.jpeg" alt="Polka-Dot Gold-Buckle Mary Jane Flats">
+          </div>
+          <div class="card-body">
+            <h3>Polka-Dot Gold-Buckle Mary Jane Flats</h3>
+            <p>Chic mesh &amp; woven polka-dot ballet flats topped with a statement gold oval buckle. Available in White, Black &amp; Mocha.</p>
+            <span class="size-label">Select EU Size:</span>
+            <div class="size-row">
+              <button type="button" class="size-pill" onclick="selectSize(this)">37</button>
+              <button type="button" class="size-pill selected" onclick="selectSize(this)">38</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">39</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
+            </div>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 38 (10% OFF)</button>
+          </div>
+        </div>
+
+        <!-- LADIES 7: Knee-High Boots -->
+        <div class="card" data-dept="ladies" data-name="Knee-High Suede Kitten-Heel Boots">
+          <div class="img-box">
+            <span class="dept-badge ladies">Ladies' • Boots</span>
+            <span class="promo-tag">10% OFF</span>
+            <img src="WhatsApp Image 2026-11-14 at 1.25.32 PM.jpeg" alt="Knee-High Suede Kitten-Heel Boots">
+          </div>
+          <div class="card-body">
+            <h3>Knee-High Pointed Suede Stiletto Boots</h3>
+            <p>Sleek side-zip tall suede boots with comfortable slim heel. Available in Taupe Beige, Chocolate Brown &amp; Classic Black.</p>
+            <span class="size-label">Select EU Size:</span>
+            <div class="size-row">
+              <button type="button" class="size-pill" onclick="selectSize(this)">37</button>
+              <button type="button" class="size-pill selected" onclick="selectSize(this)">38</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">39</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
+            </div>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 38 (10% OFF)</button>
+          </div>
+        </div>
+
+        <!-- LADIES 8: Zara Floral Flats -->
+        <div class="card" data-dept="ladies" data-name="Zara Floral Lace Gold-Studded Ballet Flats">
+          <div class="img-box">
+            <span class="dept-badge ladies">Ladies' • Zara</span>
+            <span class="promo-tag">10% OFF</span>
+            <img src="WhatsApp Image 2026-11-13 at 12.29.43 PM.jpeg" alt="Zara Floral Lace Gold-Studded Ballet Flats">
+          </div>
+          <div class="card-body">
+            <h3>Zara Floral Lace Gold-Studded Ballet Flats</h3>
+            <p>Embroidered floral mesh flats with metallic gold oval-studded strap. Available in Black, Blush Pink &amp; Tan.</p>
+            <span class="size-label">Select EU Size:</span>
+            <div class="size-row">
+              <button type="button" class="size-pill" onclick="selectSize(this)">37</button>
+              <button type="button" class="size-pill selected" onclick="selectSize(this)">38</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">39</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
+            </div>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 38 (10% OFF)</button>
+          </div>
+        </div>
+
+        <!-- LADIES 9: Red Polka-Dot Heels -->
+        <div class="card" data-dept="ladies" data-name="Red Polka-Dot Bow Ankle-Strap Heels">
+          <div class="img-box">
+            <span class="dept-badge ladies">Ladies' • Heels</span>
+            <span class="promo-tag">10% OFF</span>
+            <img src="WhatsApp Image 2026-11-13 at 12.29.18 PM.jpeg" alt="Red Polka-Dot Bow Ankle-Strap Heels">
+          </div>
+          <div class="card-body">
+            <h3>Red Polka-Dot Bow Ankle-Strap Stilettos</h3>
+            <p>Statement red-and-white polka-dot pointed heels with oversized satin bow and slim ankle strap for festive events.</p>
+            <span class="size-label">Select EU Size:</span>
+            <div class="size-row">
+              <button type="button" class="size-pill" onclick="selectSize(this)">37</button>
+              <button type="button" class="size-pill selected" onclick="selectSize(this)">38</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">39</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
+            </div>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 38 (10% OFF)</button>
+          </div>
+        </div>
+
+        <!-- ==================== 4. KIDS' SHOES (6) ==================== -->
+        <!-- KIDS 1: Timberland Wheat -->
+        <div class="card" data-dept="kids" data-name="Kids Timberland 6-Inch Boots — Wheat">
+          <div class="img-box">
+            <span class="dept-badge kids">Kids' • Timberland</span>
+            <span class="promo-tag">10% OFF</span>
+            <img src="WhatsApp Image 2026-11-12 at 1.04.24 PM_3.jpg" onerror="this.onerror=null;this.src='WhatsApp Image 2026-11-12 at 1.04.24 PM.jpeg';" alt="Kids Timberland 6-Inch Boots Wheat">
+          </div>
+          <div class="card-body">
+            <h3>Kids' Timberland 6-Inch Boots — Classic Wheat</h3>
+            <p>Iconic wheat nubuck kids' boots with padded dark-brown ankle collar and rugged lugged outsole.</p>
+            <span class="size-label">Select Kids Size:</span>
+            <div class="size-row">
+              <button type="button" class="size-pill" onclick="selectSize(this)">24</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">26</button>
+              <button type="button" class="size-pill selected" onclick="selectSize(this)">28</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">30</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">32</button>
+            </div>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 28 (10% OFF)</button>
+          </div>
+        </div>
+
+        <!-- KIDS 2: Timberland White -->
+        <div class="card" data-dept="kids" data-name="Kids Timberland 6-Inch Boots — Pure White">
+          <div class="img-box">
+            <span class="dept-badge kids">Kids' • Timberland</span>
+            <span class="promo-tag">10% OFF</span>
+            <img src="WhatsApp Image 2026-11-12 at 1.04.55 PM.jpeg" alt="Kids Timberland 6-Inch Boots White">
+          </div>
+          <div class="card-body">
+            <h3>Kids' Timberland 6-Inch Boots — Triple White</h3>
+            <p>Clean all-white kids' boots with silver eyelets, padded collar, and non-slip white lug sole.</p>
+            <span class="size-label">Select Kids Size:</span>
+            <div class="size-row">
+              <button type="button" class="size-pill" onclick="selectSize(this)">24</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">26</button>
+              <button type="button" class="size-pill selected" onclick="selectSize(this)">28</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">30</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">32</button>
+            </div>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 28 (10% OFF)</button>
+          </div>
+        </div>
+
+        <!-- KIDS 3: Timberland Triple Black -->
+        <div class="card" data-dept="kids" data-name="Kids Timberland 6-Inch Boots — Triple Black">
+          <div class="img-box">
+            <span class="dept-badge kids">Kids' • Timberland</span>
+            <span class="promo-tag">10% OFF</span>
+            <img src="WhatsApp Image 2026-11-12 at 1.05.56 PM.jpeg" alt="Kids Timberland 6-Inch Boots Black">
+          </div>
+          <div class="card-body">
+            <h3>Kids' Timberland 6-Inch Boots — Triple Black</h3>
+            <p>Scuff-resistant matte black kids' boots built for school events, travel, and weekend wear.</p>
+            <span class="size-label">Select Kids Size:</span>
+            <div class="size-row">
+              <button type="button" class="size-pill" onclick="selectSize(this)">24</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">26</button>
+              <button type="button" class="size-pill selected" onclick="selectSize(this)">28</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">30</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">32</button>
+            </div>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 28 (10% OFF)</button>
+          </div>
+        </div>
+
+        <!-- KIDS 4: Timberland Crimson Red -->
+        <div class="card" data-dept="kids" data-name="Kids Timberland 6-Inch Boots — Red/White">
+          <div class="img-box">
+            <span class="dept-badge kids">Kids' • Timberland</span>
+            <span class="promo-tag">10% OFF</span>
+            <img src="WhatsApp Image 2026-11-12 at 1.06.02 PM.jpeg" alt="Kids Timberland 6-Inch Boots Red White">
+          </div>
+          <div class="card-body">
+            <h3>Kids' Timberland 6-Inch Boots — Crimson Red</h3>
+            <p>Bold red upper with contrasting white padded collar, white laces, and white rugged outsole.</p>
+            <span class="size-label">Select Kids Size:</span>
+            <div class="size-row">
+              <button type="button" class="size-pill" onclick="selectSize(this)">24</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">26</button>
+              <button type="button" class="size-pill selected" onclick="selectSize(this)">28</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">30</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">32</button>
+            </div>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 28 (10% OFF)</button>
+          </div>
+        </div>
+
+        <!-- KIDS 5: Timberland Royal Blue -->
+        <div class="card" data-dept="kids" data-name="Kids Timberland 6-Inch Boots — Royal Blue">
+          <div class="img-box">
+            <span class="dept-badge kids">Kids' • Timberland</span>
+            <span class="promo-tag">10% OFF</span>
+            <img src="WhatsApp Image 2026-11-12 at 1.06.05 PM.jpeg" alt="Kids Timberland 6-Inch Boots Royal Blue">
+          </div>
+          <div class="card-body">
+            <h3>Kids' Timberland 6-Inch Boots — Royal Blue</h3>
+            <p>Vibrant cobalt blue kids' boots with crisp white ankle cuff and durable lugged rubber sole.</p>
+            <span class="size-label">Select Kids Size:</span>
+            <div class="size-row">
+              <button type="button" class="size-pill" onclick="selectSize(this)">24</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">26</button>
+              <button type="button" class="size-pill selected" onclick="selectSize(this)">28</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">30</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">32</button>
+            </div>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 28 (10% OFF)</button>
+          </div>
+        </div>
+
+        <!-- KIDS 6: Velcro Sneakers -->
+        <div class="card" data-dept="kids" data-name="Kids Velcro Gum-Sole Active Sneakers (4 Colors)">
+          <div class="img-box">
+            <span class="dept-badge kids">Kids' • 4 Colors</span>
+            <span class="promo-tag">10% OFF</span>
+            <img src="WhatsApp Image 2026-11-14 at 1.27.51 PM.jpeg" alt="Kids Velcro Gum-Sole Active Sneakers">
+          </div>
+          <div class="card-body">
+            <h3>Kids' Easy-Strap Gum-Sole Sneakers</h3>
+            <p>Non-slip textured gum outsole with quick Velcro strap—available in Charcoal, White, Grey &amp; Cream.</p>
+            <span class="size-label">Select Kids Size:</span>
+            <div class="size-row">
+              <button type="button" class="size-pill" onclick="selectSize(this)">21</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">23</button>
+              <button type="button" class="size-pill selected" onclick="selectSize(this)">25</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">27</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">29</button>
+            </div>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 25 (10% OFF)</button>
           </div>
         </div>
       </div>
@@ -1329,10 +1369,17 @@
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
-    function filterShoes(dept, btn) {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+    function syncActiveStates(dept) {
+      document.querySelectorAll('.filter-btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.filter === dept);
+      });
+      document.querySelectorAll('.nav-link').forEach(n => {
+        n.classList.toggle('active', n.dataset.nav === dept);
+      });
+    }
 
+    function filterShoes(dept) {
+      syncActiveStates(dept);
       document.querySelectorAll('.card').forEach(card => {
         if (dept === 'all' || card.dataset.dept === dept) {
           card.classList.remove('hidden');
@@ -1343,11 +1390,8 @@
     }
 
     function jumpToCategory(dept) {
-      const targetBtn = document.querySelector(`.filter-btn[data-filter="${dept}"]`);
-      if (targetBtn) {
-        filterShoes(dept, targetBtn);
-        document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
-      }
+      filterShoes(dept);
+      document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
     }
 
     function selectSize(pill) {
