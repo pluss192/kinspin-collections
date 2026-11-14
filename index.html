@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kinspin Collections — Men's, Ladies' &amp; Kids' Footwear Nairobi</title>
+  <style>
+    :root {
+      --bg-dark: #090d16;
+      --surface: #ffffff;
+      --surface-alt: #f1f5f9;
+      --accent: #ea580c;
+      --whatsapp: #16a34a;
+      --whatsapp-hover: #15803d;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--text-main);
+      background: #f8fafc;
+      line-height: 1.55;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    .top-bar {
+      background: var(--accent);
+      color: #ffffff;
+      text-align: center;
+      padding: 0.55rem 1rem;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    header {
+      background: var(--bg-dark);
+      color: #ffffff;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-weight: 900;
+      font-size: 1.2rem;
+      letter-spacing: -0.02em;
+    }
+
+    .brand span { color: var(--accent); }
+
+    .nav-btn {
+      background: var(--whatsapp);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 0.55rem 1.15rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .hero {
+      background: radial-gradient(circle at top right, #1e293b 0%, var(--bg-dark) 75%);
+      color: #ffffff;
+      padding: 3.75rem 0 4.25rem;
+      text-align: center;
+    }
+
+    .pill {
+      display: inline-block;
+      background: rgba(234, 88, 12, 0.18);
+      border: 1px solid rgba(234, 88, 12, 0.5);
+      color: #fdba74;
+      padding: 0.32rem 0.95rem;
+      border-radius: 9999px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero h1 {
+      font-size: 2.1rem;
+      font-weight: 900;
+      line-height: 1.15;
+      max-width: 780px;
+      margin: 0 auto 1rem;
+    }
+
+    .hero p {
+      color: #cbd5e1;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      font-size: 1.02rem;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--accent);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 0.9rem 1.8rem;
+      border-radius: 9999px;
+      font-weight: 800;
+      font-size: 0.95rem;
+    }
+
+    .dept-strip {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 0;
+    }
+
+    .dept-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      text-align: center;
+    }
+
+    .dept-box {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 0.85rem 0.5rem;
+      cursor: pointer;
+    }
+
+    .dept-box strong {
+      display: block;
+      font-size: 0.95rem;
+      color: var(--bg-dark);
+    }
+
+    .dept-box span {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    section { padding: 3.5rem 0; }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .section-header h2 {
+      font-size: 1.85rem;
+      font-weight: 900;
+      color: var(--bg-dark);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-header p { color: var(--text-muted); }
+
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.55rem;
+      margin-bottom: 2.25rem;
+    }
+
+    .filter-btn {
+      border: 1.5px solid var(--border);
+      background: #ffffff;
+      color: var(--text-main);
+      padding: 0.55rem 1.2rem;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      cursor: pointer;
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--bg-dark);
+      color: #ffffff;
+      border-color: var(--bg-dark);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 1.1rem;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card.hidden { display: none; }
+
+    .img-box {
+      position: relative;
+      height: 270px;
+      background: #e2e8f0;
+    }
+
+    .img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .dept-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--bg-dark);
+      color: #ffffff;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      border-radius: 9999px;
+    }
+
+    .dept-badge.ladies { background: #be185d; }
+    .dept-badge.kids { background: #0284c7; }
+
+    .card-body { padding: 1.4rem; }
+
+    .card-body h3 {
+      font-size: 1.18rem;
+      font-weight: 800;
+      color: var(--bg-dark);
+      margin-bottom: 0.35rem;
+    }
+
+    .card-body p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .size-label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.45rem;
+    }
+
+    .size-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .size-pill {
+      border: 1.5px solid var(--border);
+      background: #f8fafc;
+      color: var(--text-main);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.3rem 0.58rem;
+      border-radius: 0.45rem;
+      cursor: pointer;
+    }
+
+    .size-pill.selected {
+      background: var(--accent);
+      color: #ffffff;
+      border-color: var(--accent);
+    }
+
+    .btn-order {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: var(--whatsapp);
+      color: #ffffff;
+      border: none;
+      font-family: inherit;
+      font-size: 0.92rem;
+      font-weight: 800;
+      padding: 0.85rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn-order:hover { background: var(--whatsapp-hover); }
+
+    .bundle-box {
+      background: var(--bg-dark);
+      color: #ffffff;
+      border-radius: 1.25rem;
+      padding: 2.75rem 1.5rem;
+      text-align: center;
+      margin-top: 3rem;
+      border: 1px solid rgba(234, 88, 12, 0.4);
+    }
+
+    .bundle-box h2 { font-size: 1.7rem; margin-bottom: 0.6rem; }
+    .bundle-box p { color: #cbd5e1; max-width: 540px; margin: 0 auto 1.5rem; }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+      background: #ffffff;
+    }
+
+    @media (min-width: 680px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+      .hero h1 { font-size: 2.75rem; }
+    }
+
+    @media (min-width: 980px) {
+      .grid { grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    Nairobi Same-Day Rider Delivery • Men's, Ladies' &amp; Kids' Footwear
+  </div>
+
+  <header>
+    <div class="container nav">
+      <div class="brand">KINSPIN <span>COLLECTIONS</span></div>
+      <a href="https://wa.me/254795003674?text=Hello%20Kinspin%20Collections,%20I'd%20like%20to%20inquire%20about%20available%20shoes." target="_blank" class="nav-btn">WhatsApp Store</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <span class="pill">Full Family Footwear Catalog • Nairobi</span>
+      <h1>Step Up in Style — Men's, Ladies' &amp; Kids' Shoes in One Place</h1>
+      <p>No more scrolling through endless WhatsApp messages. Filter by collection, pick your exact EU size, and send your order straight to WhatsApp.</p>
+      <a href="#catalog" class="btn-primary">Browse Available Stock</a>
+    </div>
+  </section>
+
+  <div class="dept-strip">
+    <div class="container dept-grid">
+      <div class="dept-box" onclick="jumpToCategory('men')">
+        <strong>Men's Shoes</strong>
+        <span>Timberland &amp; Zegna Suede</span>
+      </div>
+      <div class="dept-box" onclick="jumpToCategory('ladies')">
+        <strong>Ladies' Shoes</strong>
+        <span>Boots, Heels &amp; Designer Flats</span>
+      </div>
+      <div class="dept-box" onclick="jumpToCategory('kids')">
+        <strong>Kids' Shoes</strong>
+        <span>Active Strap Sneakers</span>
+      </div>
+    </div>
+  </div>
+
+  <section id="catalog">
+    <div class="container">
+      <div class="section-header">
+        <h2>Latest Drops &amp; Showroom Stock</h2>
+        <p>Tap your shoe size below and click Order on WhatsApp to confirm price &amp; delivery.</p>
+      </div>
+
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all" onclick="filterShoes('all', this)">All Footwear (10)</button>
+        <button class="filter-btn" data-filter="men" onclick="filterShoes('men', this)">Men's (5)</button>
+        <button class="filter-btn" data-filter="ladies" onclick="filterShoes('ladies', this)">Ladies' (4)</button>
+        <button class="filter-btn" data-filter="kids" onclick="filterShoes('kids', this)">Kids' (1)</button>
+      </div>
+
+      <div class="grid">
+        <!-- MEN 1 -->
+        <div class="card" data-dept="men" data-name="Timberland Leather Mid-Top Sneakers (5 Colors)">
+          <div class="img-box">
+            <span class="dept-badge">Men's • 5 Colors</span>
+            <img src="WhatsApp Image 2026-11-10 at 1.44.39 PM.jpeg" alt="Timberland Leather Mid-Top Sneakers">
+          </div>
+          <div class="card-body">
+            <h3>Timberland Leather Mid-Top Sneakers</h3>
+            <p>Full-grain leather high-top sneakers with padded collar and white cupsole. Available in Black, Tan, Navy, Olive &amp; Sand.</p>
+            <span class="size-label">Select EU Size:</span>
+            <div class="size-row">
+              <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
+              <button type="button" class="size-pill selected" onclick="selectSize(this)">42</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">43</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">44</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">45</button>
+            </div>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 on WhatsApp</button>
+          </div>
+        </div>
+
+        <!-- MEN 2 -->
+        <div class="card" data-dept="men" data-name="Zegna Navy Suede Slip-On Sneakers">
+          <div class="img-box">
+            <span class="dept-badge">Men's • Suede</span>
+            <img src="WhatsApp Image 2026-11-11 at 11.38.40 AM.jpeg" alt="Zegna Navy Suede Slip-On Sneakers">
+          </div>
+          <div class="card-body">
+            <h3>Zegna Navy Suede Elastic-Lace Sneakers</h3>
+            <p>Plush midnight navy suede slip-on sneakers with tan leather tongue trim and crisp white rubber sole.</p>
+            <span class="size-label">Select EU Size:</span>
+            <div class="size-row">
+              <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
+              <button type="button" class="size-pill selected" onclick="selectSize(this)">42</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">43</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">44</button>
+            </div>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 on WhatsApp</button>
+          </div>
+        </div>
+
+        <!-- MEN 3 -->
+        <div class="card" data-dept="men" data-name="Zegna Black Suede Sneakers (White Sole)">
+          <div class="img-box">
+            <span class="dept-badge">Men's • Suede</span>
+            <img src="WhatsApp Image 2026-11-11 at 11.38.41 AM.jpeg" alt="Zegna Black Suede Sneakers White Sole">
+          </div>
+          <div class="card-body">
+            <h3>Zegna Black Suede Sneakers — White Sole</h3>
+            <p>Sleek jet-black suede upper with no-tie elastic bands and contrasting white sole for smart-casual styling.</p>
+            <span class="size-label">Select EU Size:</span>
+            <div class="size-row">
+              <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
+              <button type="button" class="size-pill selected" onclick="selectSize(this)">42</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">43</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">44</button>
+            </div>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 on WhatsApp</button>
+          </div>
+        </div>
+
+        <!-- MEN 4 -->
+        <div class="card" data-dept="men" data-name="Zegna Triple-Black Suede Sneakers">
+          <div class="img-box">
+            <span class="dept-badge">Men's • All Black</span>
+            <img src="WhatsApp Image 2026-11-11 at 11.38.41 AM (1).jpeg" alt="Zegna Triple-Black Suede Sneakers">
+          </div>
+          <div class="card-body">
+            <h3>Zegna Triple-Black Suede Slip-Ons</h3>
+            <p>Monochrome black suede upper paired with a matching black outsole—clean enough for office days and evening outings.</p>
+            <span class="size-label">Select EU Size:</span>
+            <div class="size-row">
+              <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
+              <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
+              <button type="button" class="size-pill selected" onclick="selectSize(this)">42</button>
+              <button type="button" class="size-pill" onclick="selectSize(
