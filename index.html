@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kinspin Collections — Men's, Ladies', Kids' &amp; Designer Slides Nairobi</title>
+  <title>Kinspin Collections — Nov &amp; Dec 10% Festive Offer | Footwear Nairobi</title>
   <style>
     :root {
       --bg-dark: #090d16;
       --surface: #ffffff;
       --surface-alt: #f1f5f9;
       --accent: #ea580c;
+      --gold: #facc15;
       --whatsapp: #16a34a;
       --whatsapp-hover: #15803d;
       --text-main: #0f172a;
@@ -34,14 +35,23 @@
     }
 
     .top-bar {
-      background: var(--accent);
+      background: linear-gradient(90deg, #b91c1c, var(--accent));
       color: #ffffff;
       text-align: center;
-      padding: 0.55rem 1rem;
+      padding: 0.6rem 1rem;
       font-size: 0.82rem;
       font-weight: 800;
       letter-spacing: 0.03em;
       text-transform: uppercase;
+    }
+
+    .top-bar span.timer-inline {
+      background: rgba(0, 0, 0, 0.35);
+      color: var(--gold);
+      padding: 0.18rem 0.55rem;
+      border-radius: 0.35rem;
+      margin-left: 0.35rem;
+      font-variant-numeric: tabular-nums;
     }
 
     header {
@@ -81,16 +91,16 @@
     .hero {
       background: radial-gradient(circle at top right, #1e293b 0%, var(--bg-dark) 75%);
       color: #ffffff;
-      padding: 3.75rem 0 4.25rem;
+      padding: 3.5rem 0 4rem;
       text-align: center;
     }
 
     .pill {
       display: inline-block;
-      background: rgba(234, 88, 12, 0.18);
-      border: 1px solid rgba(234, 88, 12, 0.5);
-      color: #fdba74;
-      padding: 0.32rem 0.95rem;
+      background: rgba(250, 204, 21, 0.15);
+      border: 1px solid rgba(250, 204, 21, 0.5);
+      color: var(--gold);
+      padding: 0.35rem 1rem;
       border-radius: 9999px;
       font-size: 0.78rem;
       font-weight: 800;
@@ -103,15 +113,47 @@
       font-size: 2.1rem;
       font-weight: 900;
       line-height: 1.15;
-      max-width: 800px;
+      max-width: 820px;
       margin: 0 auto 1rem;
     }
 
     .hero p {
       color: #cbd5e1;
       max-width: 620px;
-      margin: 0 auto 2rem;
+      margin: 0 auto 1.75rem;
       font-size: 1.02rem;
+    }
+
+    .countdown-wrap {
+      display: inline-flex;
+      gap: 0.65rem;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(234, 88, 12, 0.55);
+      padding: 0.85rem 1.25rem;
+      border-radius: 1rem;
+      margin-bottom: 1.85rem;
+    }
+
+    .cd-box {
+      min-width: 58px;
+      text-align: center;
+    }
+
+    .cd-num {
+      display: block;
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1.1;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .cd-lbl {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #94a3b8;
+      font-weight: 700;
     }
 
     .btn-primary {
@@ -243,6 +285,19 @@
       border-radius: 9999px;
     }
 
+    .promo-tag {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: #dc2626;
+      color: #ffffff;
+      font-size: 0.7rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      padding: 0.28rem 0.65rem;
+      border-radius: 9999px;
+    }
+
     .dept-badge.slides { background: #b45309; }
     .dept-badge.ladies { background: #be185d; }
     .dept-badge.kids { background: #0284c7; }
@@ -349,22 +404,32 @@
 <body>
 
   <div class="top-bar">
-    Nairobi Same-Day Rider Delivery • Men's, Ladies', Kids' &amp; Luxury Slides
+    🎄 Nov &amp; Dec Festive Sale: 10% OFF All Footwear • Ends in <span class="timer-inline" id="top-timer">46d 22h 45m</span>
   </div>
 
   <header>
     <div class="container nav">
       <div class="brand">KINSPIN <span>COLLECTIONS</span></div>
-      <a href="https://wa.me/254795003674?text=Hello%20Kinspin%20Collections,%20I'd%20like%20to%20inquire%20about%20available%20shoes." target="_blank" class="nav-btn">WhatsApp Store</a>
+      <a href="https://wa.me/254795003674?text=Hello%20Kinspin%20Collections,%20I'd%20like%20to%20claim%20the%2010%25%20Nov-Dec%20Festive%20Offer!" target="_blank" class="nav-btn">Claim 10% Offer</a>
     </div>
   </header>
 
   <section class="hero">
     <div class="container">
-      <span class="pill">Full Family &amp; Designer Footwear • Nairobi</span>
-      <h1>Step Up in Style — Loafers, Sneakers, Boots, Slides &amp; Flats in One Link</h1>
-      <p>No more scrolling through endless WhatsApp messages. Filter by collection, tap your exact EU size, and send a pre-filled order straight to WhatsApp.</p>
-      <a href="#catalog" class="btn-primary">Browse Available Stock</a>
+      <span class="pill">November &amp; December Festive Offer • 10% OFF Storewide</span>
+      <h1>Step Into the Holidays — 10% OFF Loafers, Sneakers, Boots &amp; Designer Slides</h1>
+      <p>Pick your exact EU size below and lock in your 10% November–December festive discount directly on WhatsApp before stock runs out.</p>
+
+      <div>
+        <div class="countdown-wrap" aria-label="Nov and Dec Offer Countdown">
+          <div class="cd-box"><span class="cd-num" id="cd-days">46</span><span class="cd-lbl">Days</span></div>
+          <div class="cd-box"><span class="cd-num" id="cd-hours">22</span><span class="cd-lbl">Hours</span></div>
+          <div class="cd-box"><span class="cd-num" id="cd-mins">45</span><span class="cd-lbl">Mins</span></div>
+          <div class="cd-box"><span class="cd-num" id="cd-secs">00</span><span class="cd-lbl">Secs</span></div>
+        </div>
+      </div>
+
+      <a href="#catalog" class="btn-primary">Shop 10% OFF Catalog</a>
     </div>
   </section>
 
@@ -393,7 +458,7 @@
     <div class="container">
       <div class="section-header">
         <h2>Latest Drops &amp; Showroom Stock</h2>
-        <p>Tap your shoe size below and click Order on WhatsApp to confirm price &amp; delivery.</p>
+        <p>Tap your shoe size below and click Order on WhatsApp to claim your 10% Nov–Dec festive discount.</p>
       </div>
 
       <div class="filter-bar">
@@ -409,6 +474,7 @@
         <div class="card" data-dept="kids" data-name="Kids Timberland 6-Inch Boots — Wheat">
           <div class="img-box">
             <span class="dept-badge kids">Kids' • Timberland</span>
+            <span class="promo-tag">10% OFF</span>
             <img src="WhatsApp Image 2026-11-12 at 1.04.24 PM_3.jpg" onerror="this.onerror=null;this.src='WhatsApp Image 2026-11-12 at 1.04.24 PM.jpeg';" alt="Kids Timberland 6-Inch Boots Wheat">
           </div>
           <div class="card-body">
@@ -422,7 +488,7 @@
               <button type="button" class="size-pill" onclick="selectSize(this)">30</button>
               <button type="button" class="size-pill" onclick="selectSize(this)">32</button>
             </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 28 on WhatsApp</button>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 28 (10% OFF)</button>
           </div>
         </div>
 
@@ -430,6 +496,7 @@
         <div class="card" data-dept="kids" data-name="Kids Timberland 6-Inch Boots — Pure White">
           <div class="img-box">
             <span class="dept-badge kids">Kids' • Timberland</span>
+            <span class="promo-tag">10% OFF</span>
             <img src="WhatsApp Image 2026-11-12 at 1.04.55 PM.jpeg" alt="Kids Timberland 6-Inch Boots White">
           </div>
           <div class="card-body">
@@ -443,7 +510,7 @@
               <button type="button" class="size-pill" onclick="selectSize(this)">30</button>
               <button type="button" class="size-pill" onclick="selectSize(this)">32</button>
             </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 28 on WhatsApp</button>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 28 (10% OFF)</button>
           </div>
         </div>
 
@@ -451,6 +518,7 @@
         <div class="card" data-dept="kids" data-name="Kids Timberland 6-Inch Boots — Triple Black">
           <div class="img-box">
             <span class="dept-badge kids">Kids' • Timberland</span>
+            <span class="promo-tag">10% OFF</span>
             <img src="WhatsApp Image 2026-11-12 at 1.05.56 PM.jpeg" alt="Kids Timberland 6-Inch Boots Black">
           </div>
           <div class="card-body">
@@ -464,7 +532,7 @@
               <button type="button" class="size-pill" onclick="selectSize(this)">30</button>
               <button type="button" class="size-pill" onclick="selectSize(this)">32</button>
             </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 28 on WhatsApp</button>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 28 (10% OFF)</button>
           </div>
         </div>
 
@@ -472,6 +540,7 @@
         <div class="card" data-dept="kids" data-name="Kids Timberland 6-Inch Boots — Red/White">
           <div class="img-box">
             <span class="dept-badge kids">Kids' • Timberland</span>
+            <span class="promo-tag">10% OFF</span>
             <img src="WhatsApp Image 2026-11-12 at 1.06.02 PM.jpeg" alt="Kids Timberland 6-Inch Boots Red White">
           </div>
           <div class="card-body">
@@ -485,7 +554,7 @@
               <button type="button" class="size-pill" onclick="selectSize(this)">30</button>
               <button type="button" class="size-pill" onclick="selectSize(this)">32</button>
             </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 28 on WhatsApp</button>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 28 (10% OFF)</button>
           </div>
         </div>
 
@@ -493,6 +562,7 @@
         <div class="card" data-dept="kids" data-name="Kids Timberland 6-Inch Boots — Royal Blue">
           <div class="img-box">
             <span class="dept-badge kids">Kids' • Timberland</span>
+            <span class="promo-tag">10% OFF</span>
             <img src="WhatsApp Image 2026-11-12 at 1.06.05 PM.jpeg" alt="Kids Timberland 6-Inch Boots Royal Blue">
           </div>
           <div class="card-body">
@@ -506,7 +576,7 @@
               <button type="button" class="size-pill" onclick="selectSize(this)">30</button>
               <button type="button" class="size-pill" onclick="selectSize(this)">32</button>
             </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 28 on WhatsApp</button>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 28 (10% OFF)</button>
           </div>
         </div>
 
@@ -514,6 +584,7 @@
         <div class="card" data-dept="kids" data-name="Kids Velcro Gum-Sole Active Sneakers (4 Colors)">
           <div class="img-box">
             <span class="dept-badge kids">Kids' • 4 Colors</span>
+            <span class="promo-tag">10% OFF</span>
             <img src="WhatsApp Image 2026-11-14 at 1.27.51 PM.jpeg" alt="Kids Velcro Gum-Sole Active Sneakers">
           </div>
           <div class="card-body">
@@ -527,14 +598,15 @@
               <button type="button" class="size-pill" onclick="selectSize(this)">27</button>
               <button type="button" class="size-pill" onclick="selectSize(this)">29</button>
             </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 25 on WhatsApp</button>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 25 (10% OFF)</button>
           </div>
         </div>
 
-        <!-- LADIES MARY JANE 1: Black Patent + Leopard -->
+        <!-- LADIES MARY JANE 1 -->
         <div class="card" data-dept="ladies" data-name="Leopard & Black Patent Mary Jane Flats">
           <div class="img-box">
             <span class="dept-badge ladies">Ladies' • Flats</span>
+            <span class="promo-tag">10% OFF</span>
             <img src="WhatsApp Image 2026-11-12 at 12.20.01 PM.jpeg" alt="Leopard and Black Patent Mary Jane Flats">
           </div>
           <div class="card-body">
@@ -548,14 +620,15 @@
               <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
               <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
             </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 38 on WhatsApp</button>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 38 (10% OFF)</button>
           </div>
         </div>
 
-        <!-- LADIES MARY JANE 2: Cognac Tan + Leopard -->
+        <!-- LADIES MARY JANE 2 -->
         <div class="card" data-dept="ladies" data-name="Leopard & Cognac Tan Patent Mary Jane Flats">
           <div class="img-box">
             <span class="dept-badge ladies">Ladies' • Flats</span>
+            <span class="promo-tag">10% OFF</span>
             <img src="WhatsApp Image 2026-11-12 at 12.20.01 PM (1).jpeg" alt="Leopard and Cognac Tan Patent Mary Jane Flats">
           </div>
           <div class="card-body">
@@ -569,14 +642,15 @@
               <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
               <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
             </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 38 on WhatsApp</button>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 38 (10% OFF)</button>
           </div>
         </div>
 
-        <!-- LADIES MARY JANE 3: Burgundy T-Strap -->
+        <!-- LADIES MARY JANE 3 -->
         <div class="card" data-dept="ladies" data-name="Burgundy Patent T-Strap Ballet Flats">
           <div class="img-box">
             <span class="dept-badge ladies">Ladies' • Flats</span>
+            <span class="promo-tag">10% OFF</span>
             <img src="WhatsApp Image 2026-11-12 at 12.20.03 PM.jpeg" alt="Burgundy Patent T-Strap Ballet Flats">
           </div>
           <div class="card-body">
@@ -590,14 +664,15 @@
               <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
               <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
             </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 38 on WhatsApp</button>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 38 (10% OFF)</button>
           </div>
         </div>
 
-        <!-- LADIES MARY JANE 4: Nude Blush T-Strap -->
+        <!-- LADIES MARY JANE 4 -->
         <div class="card" data-dept="ladies" data-name="Nude Blush Patent T-Strap Ballet Flats">
           <div class="img-box">
             <span class="dept-badge ladies">Ladies' • Flats</span>
+            <span class="promo-tag">10% OFF</span>
             <img src="WhatsApp Image 2026-11-12 at 12.20.03 PM (1).jpeg" alt="Nude Blush Patent T-Strap Ballet Flats">
           </div>
           <div class="card-body">
@@ -611,14 +686,15 @@
               <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
               <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
             </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 38 on WhatsApp</button>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 38 (10% OFF)</button>
           </div>
         </div>
 
-        <!-- LADIES MARY JANE 5: Jet Black T-Strap -->
+        <!-- LADIES MARY JANE 5 -->
         <div class="card" data-dept="ladies" data-name="Jet-Black Patent T-Strap Ballet Flats">
           <div class="img-box">
             <span class="dept-badge ladies">Ladies' • Flats</span>
+            <span class="promo-tag">10% OFF</span>
             <img src="WhatsApp Image 2026-11-12 at 12.20.04 PM.jpeg" alt="Jet-Black Patent T-Strap Ballet Flats">
           </div>
           <div class="card-body">
@@ -632,14 +708,15 @@
               <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
               <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
             </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 38 on WhatsApp</button>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 38 (10% OFF)</button>
           </div>
         </div>
 
-        <!-- LADIES 6: Polka-Dot Mary Janes -->
+        <!-- LADIES 6 -->
         <div class="card" data-dept="ladies" data-name="Polka-Dot Gold-Buckle Mary Jane Flats">
           <div class="img-box">
             <span class="dept-badge ladies">Ladies' • 3 Colors</span>
+            <span class="promo-tag">10% OFF</span>
             <img src="WhatsApp Image 2026-11-14 at 9.29.54 AM.jpeg" alt="Polka-Dot Gold-Buckle Mary Jane Flats">
           </div>
           <div class="card-body">
@@ -653,14 +730,15 @@
               <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
               <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
             </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 38 on WhatsApp</button>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 38 (10% OFF)</button>
           </div>
         </div>
 
-        <!-- LADIES 7: Knee-High Boots -->
+        <!-- LADIES 7 -->
         <div class="card" data-dept="ladies" data-name="Knee-High Suede Kitten-Heel Boots">
           <div class="img-box">
             <span class="dept-badge ladies">Ladies' • Boots</span>
+            <span class="promo-tag">10% OFF</span>
             <img src="WhatsApp Image 2026-11-14 at 1.25.32 PM.jpeg" alt="Knee-High Suede Kitten-Heel Boots">
           </div>
           <div class="card-body">
@@ -674,14 +752,15 @@
               <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
               <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
             </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 38 on WhatsApp</button>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 38 (10% OFF)</button>
           </div>
         </div>
 
-        <!-- LADIES 8: Zara Floral Flats -->
+        <!-- LADIES 8 -->
         <div class="card" data-dept="ladies" data-name="Zara Floral Lace Gold-Studded Ballet Flats">
           <div class="img-box">
             <span class="dept-badge ladies">Ladies' • Zara</span>
+            <span class="promo-tag">10% OFF</span>
             <img src="WhatsApp Image 2026-11-13 at 12.29.43 PM.jpeg" alt="Zara Floral Lace Gold-Studded Ballet Flats">
           </div>
           <div class="card-body">
@@ -695,14 +774,15 @@
               <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
               <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
             </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 38 on WhatsApp</button>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 38 (10% OFF)</button>
           </div>
         </div>
 
-        <!-- LADIES 9: Red Polka-Dot Heels -->
+        <!-- LADIES 9 -->
         <div class="card" data-dept="ladies" data-name="Red Polka-Dot Bow Ankle-Strap Heels">
           <div class="img-box">
             <span class="dept-badge ladies">Ladies' • Heels</span>
+            <span class="promo-tag">10% OFF</span>
             <img src="WhatsApp Image 2026-11-13 at 12.29.18 PM.jpeg" alt="Red Polka-Dot Bow Ankle-Strap Heels">
           </div>
           <div class="card-body">
@@ -716,7 +796,7 @@
               <button type="button" class="size-pill" onclick="selectSize(this)">40</button>
               <button type="button" class="size-pill" onclick="selectSize(this)">41</button>
             </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 38 on WhatsApp</button>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 38 (10% OFF)</button>
           </div>
         </div>
 
@@ -724,6 +804,7 @@
         <div class="card" data-dept="men" data-name="Adidas Mesh Running Sneakers — Black/White">
           <div class="img-box">
             <span class="dept-badge">Men's • Adidas</span>
+            <span class="promo-tag">10% OFF</span>
             <img src="WhatsApp Image 2026-11-13 at 10.06.52 AM.jpeg" alt="Adidas Mesh Running Sneakers Black White">
           </div>
           <div class="card-body">
@@ -738,7 +819,7 @@
               <button type="button" class="size-pill" onclick="selectSize(this)">44</button>
               <button type="button" class="size-pill" onclick="selectSize(this)">45</button>
             </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 on WhatsApp</button>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 (10% OFF)</button>
           </div>
         </div>
 
@@ -746,6 +827,7 @@
         <div class="card" data-dept="men" data-name="Adidas Mesh Running Sneakers — Black/Grey">
           <div class="img-box">
             <span class="dept-badge">Men's • Adidas</span>
+            <span class="promo-tag">10% OFF</span>
             <img src="WhatsApp Image 2026-11-13 at 10.06.53 AM.jpeg" alt="Adidas Mesh Running Sneakers Black Grey">
           </div>
           <div class="card-body">
@@ -760,7 +842,7 @@
               <button type="button" class="size-pill" onclick="selectSize(this)">44</button>
               <button type="button" class="size-pill" onclick="selectSize(this)">45</button>
             </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 on WhatsApp</button>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 (10% OFF)</button>
           </div>
         </div>
 
@@ -768,6 +850,7 @@
         <div class="card" data-dept="men" data-name="Adidas Mesh Running Sneakers — Navy/White">
           <div class="img-box">
             <span class="dept-badge">Men's • Adidas</span>
+            <span class="promo-tag">10% OFF</span>
             <img src="WhatsApp Image 2026-11-13 at 10.06.53 AM (1).jpeg" alt="Adidas Mesh Running Sneakers Navy White">
           </div>
           <div class="card-body">
@@ -782,7 +865,7 @@
               <button type="button" class="size-pill" onclick="selectSize(this)">44</button>
               <button type="button" class="size-pill" onclick="selectSize(this)">45</button>
             </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 on WhatsApp</button>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 (10% OFF)</button>
           </div>
         </div>
 
@@ -790,6 +873,7 @@
         <div class="card" data-dept="men" data-name="Adidas Mesh Running Sneakers — Wolf Grey">
           <div class="img-box">
             <span class="dept-badge">Men's • Adidas</span>
+            <span class="promo-tag">10% OFF</span>
             <img src="WhatsApp Image 2026-11-13 at 10.06.54 AM.jpeg" alt="Adidas Mesh Running Sneakers Wolf Grey">
           </div>
           <div class="card-body">
@@ -804,7 +888,7 @@
               <button type="button" class="size-pill" onclick="selectSize(this)">44</button>
               <button type="button" class="size-pill" onclick="selectSize(this)">45</button>
             </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 on WhatsApp</button>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 (10% OFF)</button>
           </div>
         </div>
 
@@ -812,6 +896,7 @@
         <div class="card" data-dept="men" data-name="Adidas Mesh Running Sneakers — Triple Black">
           <div class="img-box">
             <span class="dept-badge">Men's • Triple Black</span>
+            <span class="promo-tag">10% OFF</span>
             <img src="WhatsApp Image 2026-11-13 at 10.06.54 AM (1).jpeg" alt="Adidas Mesh Running Sneakers Triple Black">
           </div>
           <div class="card-body">
@@ -826,7 +911,7 @@
               <button type="button" class="size-pill" onclick="selectSize(this)">44</button>
               <button type="button" class="size-pill" onclick="selectSize(this)">45</button>
             </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 on WhatsApp</button>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 (10% OFF)</button>
           </div>
         </div>
 
@@ -834,6 +919,7 @@
         <div class="card" data-dept="men" data-name="Santoni Black Suede Bit Loafers">
           <div class="img-box">
             <span class="dept-badge">Men's • Santoni</span>
+            <span class="promo-tag">10% OFF</span>
             <img src="WhatsApp Image 2026-11-14 at 10.04.11 AM.jpeg" alt="Santoni Black Suede Bit Loafers">
           </div>
           <div class="card-body">
@@ -848,7 +934,7 @@
               <button type="button" class="size-pill" onclick="selectSize(this)">44</button>
               <button type="button" class="size-pill" onclick="selectSize(this)">45</button>
             </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 on WhatsApp</button>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 (10% OFF)</button>
           </div>
         </div>
 
@@ -856,6 +942,7 @@
         <div class="card" data-dept="men" data-name="Santoni Espresso Brown Suede Loafers">
           <div class="img-box">
             <span class="dept-badge">Men's • Santoni</span>
+            <span class="promo-tag">10% OFF</span>
             <img src="WhatsApp Image 2026-11-14 at 10.04.12 AM.jpeg" alt="Santoni Espresso Brown Suede Loafers">
           </div>
           <div class="card-body">
@@ -870,7 +957,7 @@
               <button type="button" class="size-pill" onclick="selectSize(this)">44</button>
               <button type="button" class="size-pill" onclick="selectSize(this)">45</button>
             </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 on WhatsApp</button>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 (10% OFF)</button>
           </div>
         </div>
 
@@ -878,6 +965,7 @@
         <div class="card" data-dept="men" data-name="Santoni Brown Suede Boxed Edition">
           <div class="img-box">
             <span class="dept-badge">Men's • Boxed</span>
+            <span class="promo-tag">10% OFF</span>
             <img src="WhatsApp Image 2026-11-14 at 10.04.12 AM (1).jpeg" alt="Santoni Brown Suede Boxed Edition">
           </div>
           <div class="card-body">
@@ -891,7 +979,7 @@
               <button type="button" class="size-pill" onclick="selectSize(this)">43</button>
               <button type="button" class="size-pill" onclick="selectSize(this)">44</button>
             </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 on WhatsApp</button>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 (10% OFF)</button>
           </div>
         </div>
 
@@ -899,6 +987,7 @@
         <div class="card" data-dept="men" data-name="Santoni Black Suede Boxed Edition">
           <div class="img-box">
             <span class="dept-badge">Men's • Boxed</span>
+            <span class="promo-tag">10% OFF</span>
             <img src="WhatsApp Image 2026-11-14 at 10.04.12 AM (2).jpeg" alt="Santoni Black Suede Boxed Edition">
           </div>
           <div class="card-body">
@@ -912,7 +1001,7 @@
               <button type="button" class="size-pill" onclick="selectSize(this)">43</button>
               <button type="button" class="size-pill" onclick="selectSize(this)">44</button>
             </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 on WhatsApp</button>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 (10% OFF)</button>
           </div>
         </div>
 
@@ -920,6 +1009,7 @@
         <div class="card" data-dept="men" data-name="Timberland Leather Mid-Top Sneakers (5 Colors)">
           <div class="img-box">
             <span class="dept-badge">Men's • 5 Colors</span>
+            <span class="promo-tag">10% OFF</span>
             <img src="WhatsApp Image 2026-11-10 at 1.44.39 PM.jpeg" alt="Timberland Leather Mid-Top Sneakers">
           </div>
           <div class="card-body">
@@ -934,7 +1024,7 @@
               <button type="button" class="size-pill" onclick="selectSize(this)">44</button>
               <button type="button" class="size-pill" onclick="selectSize(this)">45</button>
             </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 on WhatsApp</button>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 (10% OFF)</button>
           </div>
         </div>
 
@@ -942,6 +1032,7 @@
         <div class="card" data-dept="men" data-name="Zegna Navy Suede Slip-On Sneakers">
           <div class="img-box">
             <span class="dept-badge">Men's • Zegna</span>
+            <span class="promo-tag">10% OFF</span>
             <img src="WhatsApp Image 2026-11-11 at 11.38.40 AM.jpeg" alt="Zegna Navy Suede Slip-On Sneakers">
           </div>
           <div class="card-body">
@@ -955,7 +1046,7 @@
               <button type="button" class="size-pill" onclick="selectSize(this)">43</button>
               <button type="button" class="size-pill" onclick="selectSize(this)">44</button>
             </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 on WhatsApp</button>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 (10% OFF)</button>
           </div>
         </div>
 
@@ -963,6 +1054,7 @@
         <div class="card" data-dept="men" data-name="Zegna Black Suede Sneakers (White Sole)">
           <div class="img-box">
             <span class="dept-badge">Men's • Zegna</span>
+            <span class="promo-tag">10% OFF</span>
             <img src="WhatsApp Image 2026-11-11 at 11.38.41 AM.jpeg" alt="Zegna Black Suede Sneakers White Sole">
           </div>
           <div class="card-body">
@@ -976,7 +1068,7 @@
               <button type="button" class="size-pill" onclick="selectSize(this)">43</button>
               <button type="button" class="size-pill" onclick="selectSize(this)">44</button>
             </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 on WhatsApp</button>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 (10% OFF)</button>
           </div>
         </div>
 
@@ -984,6 +1076,7 @@
         <div class="card" data-dept="men" data-name="Zegna Triple-Black Suede Sneakers">
           <div class="img-box">
             <span class="dept-badge">Men's • All Black</span>
+            <span class="promo-tag">10% OFF</span>
             <img src="WhatsApp Image 2026-11-11 at 11.38.41 AM (1).jpeg" alt="Zegna Triple-Black Suede Sneakers">
           </div>
           <div class="card-body">
@@ -997,7 +1090,7 @@
               <button type="button" class="size-pill" onclick="selectSize(this)">43</button>
               <button type="button" class="size-pill" onclick="selectSize(this)">44</button>
             </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 on WhatsApp</button>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 (10% OFF)</button>
           </div>
         </div>
 
@@ -1005,6 +1098,7 @@
         <div class="card" data-dept="men" data-name="Zegna Sand Taupe Suede Sneakers">
           <div class="img-box">
             <span class="dept-badge">Men's • Zegna</span>
+            <span class="promo-tag">10% OFF</span>
             <img src="WhatsApp Image 2026-11-11 at 11.38.41 AM (2).jpeg" alt="Zegna Sand Taupe Suede Sneakers">
           </div>
           <div class="card-body">
@@ -1018,7 +1112,7 @@
               <button type="button" class="size-pill" onclick="selectSize(this)">43</button>
               <button type="button" class="size-pill" onclick="selectSize(this)">44</button>
             </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 on WhatsApp</button>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 (10% OFF)</button>
           </div>
         </div>
 
@@ -1026,6 +1120,7 @@
         <div class="card" data-dept="slides" data-name="Berluti Paris Double-Buckle Slides — Mocha Brown">
           <div class="img-box">
             <span class="dept-badge slides">Slides • Berluti</span>
+            <span class="promo-tag">10% OFF</span>
             <img src="WhatsApp Image 2026-11-13 at 10.04.56 AM.jpeg" alt="Berluti Paris Double-Buckle Slides Brown">
           </div>
           <div class="card-body">
@@ -1039,7 +1134,7 @@
               <button type="button" class="size-pill" onclick="selectSize(this)">43</button>
               <button type="button" class="size-pill" onclick="selectSize(this)">44</button>
             </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 on WhatsApp</button>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 (10% OFF)</button>
           </div>
         </div>
 
@@ -1047,6 +1142,7 @@
         <div class="card" data-dept="slides" data-name="Berluti Paris Double-Buckle Slides — Pure White">
           <div class="img-box">
             <span class="dept-badge slides">Slides • Berluti</span>
+            <span class="promo-tag">10% OFF</span>
             <img src="WhatsApp Image 2026-11-13 at 10.04.57 AM.jpeg" alt="Berluti Paris Double-Buckle Slides White">
           </div>
           <div class="card-body">
@@ -1060,7 +1156,7 @@
               <button type="button" class="size-pill" onclick="selectSize(this)">43</button>
               <button type="button" class="size-pill" onclick="selectSize(this)">44</button>
             </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 on WhatsApp</button>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 (10% OFF)</button>
           </div>
         </div>
 
@@ -1068,6 +1164,7 @@
         <div class="card" data-dept="slides" data-name="Berluti Paris Double-Buckle Slides — Matte Black">
           <div class="img-box">
             <span class="dept-badge slides">Slides • Berluti</span>
+            <span class="promo-tag">10% OFF</span>
             <img src="WhatsApp Image 2026-11-13 at 10.05.00 AM.jpeg" alt="Berluti Paris Double-Buckle Slides Black">
           </div>
           <div class="card-body">
@@ -1081,7 +1178,7 @@
               <button type="button" class="size-pill" onclick="selectSize(this)">43</button>
               <button type="button" class="size-pill" onclick="selectSize(this)">44</button>
             </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 on WhatsApp</button>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 (10% OFF)</button>
           </div>
         </div>
 
@@ -1089,6 +1186,7 @@
         <div class="card" data-dept="slides" data-name="Hermès Black Embossed Criss-Cross Slides">
           <div class="img-box">
             <span class="dept-badge slides">Slides • Hermès</span>
+            <span class="promo-tag">10% OFF</span>
             <img src="WhatsApp Image 2026-11-13 at 12.47.41 PM.jpeg" alt="Hermès Black Embossed Criss-Cross Slides">
           </div>
           <div class="card-body">
@@ -1102,7 +1200,7 @@
               <button type="button" class="size-pill" onclick="selectSize(this)">43</button>
               <button type="button" class="size-pill" onclick="selectSize(this)">44</button>
             </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 on WhatsApp</button>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 (10% OFF)</button>
           </div>
         </div>
 
@@ -1110,6 +1208,7 @@
         <div class="card" data-dept="slides" data-name="Burberry TB Gold-Emblem Pebbled Leather Slides">
           <div class="img-box">
             <span class="dept-badge slides">Slides • Burberry</span>
+            <span class="promo-tag">10% OFF</span>
             <img src="WhatsApp Image 2026-11-13 at 12.47.42 PM.jpeg" alt="Burberry TB Gold-Emblem Pebbled Leather Slides">
           </div>
           <div class="card-body">
@@ -1123,7 +1222,7 @@
               <button type="button" class="size-pill" onclick="selectSize(this)">43</button>
               <button type="button" class="size-pill" onclick="selectSize(this)">44</button>
             </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 on WhatsApp</button>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 (10% OFF)</button>
           </div>
         </div>
 
@@ -1131,6 +1230,7 @@
         <div class="card" data-dept="slides" data-name="Louis Vuitton Damier Gloss Criss-Cross Slides">
           <div class="img-box">
             <span class="dept-badge slides">Slides • LV Paris</span>
+            <span class="promo-tag">10% OFF</span>
             <img src="WhatsApp Image 2026-11-13 at 12.47.42 PM (1).jpeg" alt="Louis Vuitton Damier Gloss Criss-Cross Slides">
           </div>
           <div class="card-body">
@@ -1144,7 +1244,7 @@
               <button type="button" class="size-pill" onclick="selectSize(this)">43</button>
               <button type="button" class="size-pill" onclick="selectSize(this)">44</button>
             </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 on WhatsApp</button>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 (10% OFF)</button>
           </div>
         </div>
 
@@ -1152,6 +1252,7 @@
         <div class="card" data-dept="slides" data-name="Gucci GG Gold-Hardware Leather Slides">
           <div class="img-box">
             <span class="dept-badge slides">Slides • Gucci</span>
+            <span class="promo-tag">10% OFF</span>
             <img src="WhatsApp Image 2026-11-13 at 12.47.43 PM (1).jpeg" alt="Gucci GG Gold-Hardware Leather Slides">
           </div>
           <div class="card-body">
@@ -1165,7 +1266,7 @@
               <button type="button" class="size-pill" onclick="selectSize(this)">43</button>
               <button type="button" class="size-pill" onclick="selectSize(this)">44</button>
             </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 on WhatsApp</button>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 (10% OFF)</button>
           </div>
         </div>
 
@@ -1173,6 +1274,7 @@
         <div class="card" data-dept="slides" data-name="Alexander McQueen Silver-Buckle Lug Slides">
           <div class="img-box">
             <span class="dept-badge slides">Slides • McQueen</span>
+            <span class="promo-tag">10% OFF</span>
             <img src="WhatsApp Image 2026-11-13 at 11.41.23 AM.jpeg" alt="Alexander McQueen Silver-Buckle Lug Slides">
           </div>
           <div class="card-body">
@@ -1186,25 +1288,46 @@
               <button type="button" class="size-pill" onclick="selectSize(this)">43</button>
               <button type="button" class="size-pill" onclick="selectSize(this)">44</button>
             </div>
-            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 on WhatsApp</button>
+            <button type="button" class="btn-order" onclick="orderWhatsApp(this)">Order Size 42 (10% OFF)</button>
           </div>
         </div>
       </div>
 
       <div class="bundle-box">
-        <h2>Shopping for the Whole Family?</h2>
-        <p>Order 2 or more pairs across Men's, Designer Slides, Ladies', or Kids' collections and enjoy discounted Nairobi rider delivery.</p>
-        <a href="https://wa.me/254795003674?text=Hello%20Kinspin%20Collections,%20I'd%20like%20to%20order%20multiple%20pairs%20from%20your%20catalog!" target="_blank" class="btn-order" style="display:inline-block; width:auto; padding:0.95rem 2rem;">Ask About Family Bundle Deals</a>
+        <h2>November &amp; December Family Bundle Offer</h2>
+        <p>Order 2 or more pairs across Men's, Designer Slides, Ladies', or Kids' collections before Dec 31 and enjoy 10% OFF plus discounted Nairobi rider delivery.</p>
+        <a href="https://wa.me/254795003674?text=Hello%20Kinspin%20Collections,%20I'd%20like%20to%20claim%20the%2010%25%20Nov-Dec%20Festive%20Family%20Bundle%20Offer!" target="_blank" class="btn-order" style="display:inline-block; width:auto; padding:0.95rem 2rem;">Claim 10% Family Bundle on WhatsApp</a>
       </div>
     </div>
   </section>
 
   <footer>
-    <p>&copy; 2026 Kinspin Collections Nairobi • Men's, Ladies', Kids' &amp; Luxury Slides. Built by Pluscase.</p>
+    <p>&copy; 2026 Kinspin Collections Nairobi • November &amp; December 10% Festive Offer. Built by Pluscase.</p>
   </footer>
 
   <script>
     const WHATSAPP_NUMBER = "254795003674";
+    const OFFER_END = new Date("2026-12-31T23:59:59+03:00").getTime();
+
+    function updateCountdown() {
+      const now = Date.now();
+      const diff = Math.max(0, OFFER_END - now);
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const mins = Math.floor((diff / (1000 * 60)) % 60);
+      const secs = Math.floor((diff / 1000) % 60);
+
+      const pad = n => String(n).padStart(2, '0');
+      document.getElementById('cd-days').textContent = days;
+      document.getElementById('cd-hours').textContent = pad(hours);
+      document.getElementById('cd-mins').textContent = pad(mins);
+      document.getElementById('cd-secs').textContent = pad(secs);
+      document.getElementById('top-timer').textContent = `${days}d ${pad(hours)}h ${pad(mins)}m ${pad(secs)}s`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
 
     function filterShoes(dept, btn) {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -1233,14 +1356,14 @@
       pill.classList.add('selected');
 
       const chosenSize = pill.textContent.trim();
-      card.querySelector('.btn-order').textContent = `Order Size ${chosenSize} on WhatsApp`;
+      card.querySelector('.btn-order').textContent = `Order Size ${chosenSize} (10% OFF)`;
     }
 
     function orderWhatsApp(btn) {
       const card = btn.closest('.card');
       const shoeName = card.dataset.name;
       const size = card.querySelector('.size-pill.selected').textContent.trim();
-      const message = `Hi Kinspin Collections, I'd like to check the price & availability for:\n• Item: ${shoeName}\n• Size: EU ${size}`;
+      const message = `Hi Kinspin Collections, I'd like to claim the 10% Nov–Dec Festive Offer on:\n• Item: ${shoeName}\n• Size: EU ${size}`;
       window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
     }
   </script>
